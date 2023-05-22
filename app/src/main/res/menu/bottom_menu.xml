@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Links" android:icon="@drawable/links_icon" android:id="@+id/linksFragment" />
+    <item android:title="Courses" android:icon="@drawable/courses_icon" android:id="@+id/coursesFragment"/>
+    <item android:title="Item" android:icon="@drawable/add_button" android:id="@+id/addButton"/>
+    <item android:title="Campaigns" android:icon="@drawable/campaigns_icon" android:id="@+id/campaignsFraments"/>
+    <item android:title="Profile" android:icon="@drawable/profile_icon" android:id="@+id/profileFragment2"/>
+</menu>
