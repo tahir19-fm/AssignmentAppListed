@@ -1,10 +1,7 @@
 package com.example.assignmentapplisted.home.util
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.assignmentapplisted.R
@@ -41,13 +38,4 @@ class HomeScreenAdapter(private var items : List<RvLinkModalClass>) : RecyclerVi
 
 
 
-}
-class WrapContentLinearLayoutManager(context:Context) : LinearLayoutManager(context) {
-    override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
-        try {
-            super.onLayoutChildren(recycler, state)
-        } catch (e: IndexOutOfBoundsException) {
-            Log.e("TAG", " in RecyclerView")
-        }
-    }
 }
