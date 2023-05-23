@@ -91,19 +91,71 @@
                     android:layout_height="30dp"
                     android:layout_marginStart="10dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/hand"></ImageView>
+                    android:src="@drawable/hand"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/graphSpace"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="6dp"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvOverview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Overview"
+                        android:layout_weight="4"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:background="@drawable/card_border"
+                        >
+                        <TextView
+                            android:id="@+id/tvChartDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20 dec - 23 dec"
+                            android:layout_weight="1"
+                            android:layout_gravity="end"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center_horizontal"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/clock_icon"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -115,7 +167,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/graphSpace">
+                app:layout_constraintTop_toBottomOf="@+id/llChart">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -155,9 +207,8 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:padding="10dp"
+                android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -166,7 +217,7 @@
                     android:id="@+id/tvTopLinks"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:background="@drawable/link_btn_res"
                     android:text="Top Links"
@@ -178,7 +229,7 @@
                     android:id="@+id/tvRecentLinks"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="Recent Links"
                     android:textColor="@color/black"
@@ -190,8 +241,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/bad"
                     android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/card_border"
                     android:elevation="5dp"
                     app:cardCornerRadius="10dp">

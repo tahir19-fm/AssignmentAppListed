@@ -15,4 +15,14 @@
     <color name="connect_green">#8038D15F</color>
     <color name="faq_blue">#80376FFF</color>
     <color name="setting_back">#1FFFFFFF</color>
+    <color name="icon_tint">
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:color="@color/focus_icon_color" android:state_checked="true" />
+            <item android:color="@color/bottom_navigation_color" />
+        </selector>
+    </color>
+
+
+
 </resources>
+
